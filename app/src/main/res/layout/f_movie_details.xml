@@ -6,7 +6,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_movie_details"
@@ -15,7 +16,6 @@
     android:background="@color/colorPrimaryDark"
     tools:context="com.example.mahmoudashraf.movies.activity.movie_detailsFragment"
     tools:showIn="@layout/a_details">
-
     <ImageView
         app:srcCompat="@drawable/rio"
         android:id="@+id/Poster_Image"
@@ -173,8 +173,6 @@
         tools:ignore="ObsoleteLayoutParam"
         android:scrollbars="vertical"/>
     </LinearLayout>
-
-
 </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>
 

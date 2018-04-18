@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyMovies.iml" filepath="$PROJECT_DIR$/MyMovies.iml" />
+      <module fileurl="file://F:\Work\Projects\mymovies\MyMovies.iml" filepath="F:\Work\Projects\mymovies\MyMovies.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/mymovies.iml" filepath="$PROJECT_DIR$/.idea/mymovies.iml" />
     </modules>
   </component>
 </project>

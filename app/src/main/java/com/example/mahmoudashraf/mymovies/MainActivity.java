@@ -100,21 +100,14 @@ public class MainActivity extends AppCompatActivity
             bundle.putString("Type","top_rated");
             F.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.HomeContainer,F).commit();
-            this.setTitle("Popular Series");
-        }else if (id==R.id.Latest_Series){
-            Fragment F=new F_TV();
-            Bundle bundle=new Bundle();
-            bundle.putString("Type","latest");
-            F.setArguments(bundle);
-            getSupportFragmentManager().beginTransaction().replace(R.id.HomeContainer,F).commit();
-            this.setTitle("Popular Series");
+            this.setTitle("Top_Rated Series");
         }else if (id==R.id.OnAir_Series){
             Fragment F=new F_TV();
             Bundle bundle=new Bundle();
             bundle.putString("Type","on_the_air");
             F.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.HomeContainer,F).commit();
-            this.setTitle("Popular Series");
+            this.setTitle("On Air Series");
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

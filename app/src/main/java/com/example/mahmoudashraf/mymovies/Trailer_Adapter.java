@@ -10,6 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -22,12 +26,28 @@ import butterknife.ButterKnife;
  */
 
 public class Trailer_Adapter extends RecyclerView.Adapter<Trailer_Adapter.TrailerViewHolder> {
-    Context C;
+    private Context C;
     private ArrayList<Trailer> horizontalTrailers;
-
+    private Trailer mTrailer;
+    private InterstitialAd openYoutubeAd;
     Trailer_Adapter(Context C, ArrayList<Trailer> Data) {
         this.horizontalTrailers = Data;
         this.C=C;
+        openYoutubeAd = new InterstitialAd(C);
+        openYoutubeAd.setAdUnitId("ca-app-pub-5669751081498672/9352057985");
+        openYoutubeAd.loadAd(new AdRequest.Builder().build());
+        openYoutubeAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                OpenYoutube();
+                openYoutubeAd.loadAd(new AdRequest.Builder().build());
+            }
+
+            @Override
+            public void onAdClicked() {
+                openYoutubeAd.loadAd(new AdRequest.Builder().build());
+            }
+        });
     }
 
     class TrailerViewHolder extends RecyclerView.ViewHolder {
@@ -60,14 +80,28 @@ public class Trailer_Adapter extends RecyclerView.Adapter<Trailer_Adapter.Traile
         holder.trailer_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(C, "Opening " + T.getTrailerName(), Toast.LENGTH_LONG).show();
-                String VideoUrl = "https://www.youtube.com/watch?v=" + T.getTrailerKey();
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(VideoUrl));
-                holder.trailer_image.getContext().startActivity(intent);
+                mTrailer=T;
+                ShowOpenYoutubeAd();
             }
         });
     }
+
+    private void ShowOpenYoutubeAd() {
+        if (openYoutubeAd.isLoaded()) {
+            openYoutubeAd.show();
+        } else {
+            OpenYoutube();
+        }
+    }
+    private void OpenYoutube(){
+        Toast.makeText(C, "Opening " + mTrailer.getTrailerName(), Toast.LENGTH_LONG).show();
+        String VideoUrl = "https://www.youtube.com/watch?v=" + mTrailer.getTrailerKey();
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(VideoUrl));
+        C.startActivity(intent);
+    }
+
+
     @Override
     public int getItemCount() {
         return horizontalTrailers.size();

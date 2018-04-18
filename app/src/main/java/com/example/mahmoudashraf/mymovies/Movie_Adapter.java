@@ -18,6 +18,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.github.florent37.glidepalette.GlidePalette;
 import com.github.florent37.picassopalette.PicassoPalette;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -33,12 +36,29 @@ import butterknife.ButterKnife;
 
 public class Movie_Adapter extends RecyclerView.Adapter<Movie_Adapter.Movie_ViewHolder> {
 
+    private InterstitialAd OpenAd;
     private Context context;
+    private Movie mMovie;
     private ArrayList<Movie> Data=new ArrayList<>();
     private static final String Base_URL="https://image.tmdb.org/t/p/w500";
     Movie_Adapter(Context context, ArrayList<Movie> data) {
         this.context = context;
         Data = data;
+        OpenAd = new InterstitialAd(context);
+        OpenAd.setAdUnitId("ca-app-pub-5669751081498672/6390675115");
+        OpenAd.loadAd(new AdRequest.Builder().build());
+        OpenAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                OpenMovie();
+                OpenAd.loadAd(new AdRequest.Builder().build());
+            }
+
+            @Override
+            public void onAdClicked() {
+                OpenAd.loadAd(new AdRequest.Builder().build());
+            }
+        });
     }
 
     @Override
@@ -78,30 +98,16 @@ public class Movie_Adapter extends RecyclerView.Adapter<Movie_Adapter.Movie_View
             mView=itemView;
             ButterKnife.bind(this,mView);
         }
-        void SetMovie(final Movie movie){
+        void SetMovie(final Movie movie) {
             MovieName.setText(movie.getTitle());
             MovieName.setSelected(true);
-            String Poster_Path=Base_URL+movie.getPosterPath();
-
-//            Picasso.with(context)
-//                    .load(Poster_Path)
-//                    .into(MovieImage,
-//                            PicassoPalette.with(Poster_Path,MovieImage)
-//                                    .use(PicassoPalette.Profile.MUTED_DARK)
-//                                    .intoBackground(mView)
-//                                    .intoTextColor(MovieName)
-//                                    .use(PicassoPalette.Profile.VIBRANT)
-//                                    .intoBackground(mView, PicassoPalette.Swatch.RGB)
-//                                    .intoTextColor(MovieName, PicassoPalette.Swatch.TITLE_TEXT_COLOR)
-//                    );
-
+            String Poster_Path = Base_URL + movie.getPosterPath();
             Glide.with(context)
                     .load(Poster_Path)
                     .listener(GlidePalette.with(Poster_Path)
                             .use(GlidePalette.Profile.MUTED_DARK)
                             .intoBackground(mView)
                             .intoTextColor(MovieName)
-
                             .use(GlidePalette.Profile.VIBRANT)
                             .intoBackground(mView, GlidePalette.Swatch.RGB)
                             .intoTextColor(MovieName, GlidePalette.Swatch.BODY_TEXT_COLOR)
@@ -111,12 +117,23 @@ public class Movie_Adapter extends RecyclerView.Adapter<Movie_Adapter.Movie_View
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(context, Movie_Details.class);
-                    i.putExtra("movie", movie);
-                    context.startActivity(i);
+                    mMovie = movie;
+                    ShowOpenAd();
                 }
             });
-
         }
+    }
+
+    private void ShowOpenAd() {
+        if (OpenAd.isLoaded()) {
+            OpenAd.show();
+        } else {
+            OpenMovie();
+        }
+    }
+    private void OpenMovie(){
+        Intent i = new Intent(context, Movie_Details.class);
+        i.putExtra("movie", mMovie);
+        context.startActivity(i);
     }
 }

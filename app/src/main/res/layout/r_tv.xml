@@ -6,10 +6,10 @@
     >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:layout_height="wrap_content">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="265dp"
             android:scaleType="centerCrop"
             android:id="@+id/TV_Image"
             android:contentDescription="Movie Poster"
@@ -27,13 +27,13 @@
             android:scrollHorizontally="true"
             android:singleLine="true"
             android:text="Title"
+            android:padding="5dp"
             android:textColor="@android:color/black"
             android:textSize="16sp"
-            android:textStyle="italic|bold"
+            android:textStyle="bold"
             tools:ignore="Deprecated,HardcodedText,RtlHardcoded"
             android:layout_below="@+id/TV_Image"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
             android:gravity="center"/>
     </RelativeLayout>
 

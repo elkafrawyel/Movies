@@ -3,12 +3,9 @@ package com.example.mahmoudashraf.mymovies;
 import android.app.Application;
 import android.content.Context;
 
+import com.google.android.gms.ads.MobileAds;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
-
-/**
- * Created by Mahmoud Ashraf on 1/9/2018.
- */
 
 public class myMovies extends Application {
     private static myMovies mInstance;
@@ -25,6 +22,8 @@ public class myMovies extends Application {
         built.setLoggingEnabled(true);
         Picasso.setSingletonInstance(built);
 
+
+        MobileAds.initialize(this,"ca-app-pub-5669751081498672~3824399133");
     }
 
     public static Context getAppContext(){

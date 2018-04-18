@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    >
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:layout_height="wrap_content">
         <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:scaleType="centerCrop"
-        android:id="@+id/Movie_Image"
-        android:contentDescription="Movie Poster"
-        tools:ignore="ContentDescription,HardcodedText"
-        android:cropToPadding="false"
-        android:adjustViewBounds="false"/>
+            android:id="@+id/Movie_Image"
+            android:layout_width="match_parent"
+            android:layout_height="265dp"
+            android:adjustViewBounds="false"
+            android:contentDescription="Movie Poster"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription,HardcodedText" />
+
         <TextView
             android:id="@+id/Movie_Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/Movie_Image"
+            android:layout_centerHorizontal="true"
             android:ellipsize="marquee"
             android:focusableInTouchMode="true"
             android:freezesText="true"
+            android:gravity="center"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:singleLine="true"
             android:text="Title"
             android:textColor="@android:color/black"
             android:textSize="16sp"
-            android:textStyle="italic|bold"
-            tools:ignore="Deprecated,HardcodedText,RtlHardcoded"
-            android:layout_below="@+id/Movie_Image"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:gravity="center"/>
+            android:textStyle="bold"
+            android:padding="5dp"
+            tools:ignore="Deprecated,HardcodedText,RtlHardcoded" />
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>
