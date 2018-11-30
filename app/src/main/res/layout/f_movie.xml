@@ -16,8 +16,8 @@
         android:id="@+id/Rec_Movies">
     </android.support.v7.widget.RecyclerView>
 
-
     </android.support.v4.widget.SwipeRefreshLayout>
+
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"

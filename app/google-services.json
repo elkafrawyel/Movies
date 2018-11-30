@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1075027885663",
+    "firebase_url": "https://moviestv-38279.firebaseio.com",
+    "project_id": "moviestv-38279",
+    "storage_bucket": "moviestv-38279.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075027885663:android:acca878ccd3b3f18",
+        "android_client_info": {
+          "package_name": "com.apps.elkafrawyel.movies_tv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075027885663-0o8o6h01go5up3nc268g4hmr1e3qk2hh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apps.elkafrawyel.movies_tv",
+            "certificate_hash": "974425ecb1eceee6ad7da7a01effff6c98604390"
+          }
+        },
+        {
+          "client_id": "1075027885663-ipo2i3vnqlu4k62mif60hhj9igot6v53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXtB0j2runWYBjhAjJEVVT_7TYlzRZZPc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075027885663-ipo2i3vnqlu4k62mif60hhj9igot6v53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

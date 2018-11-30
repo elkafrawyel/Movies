@@ -1,178 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
->
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_movie_details"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
-    tools:context="com.example.mahmoudashraf.movies.activity.movie_detailsFragment"
-    tools:showIn="@layout/a_details">
-    <ImageView
-        app:srcCompat="@drawable/rio"
-        android:id="@+id/Poster_Image"
-        android:contentDescription="Movie Poster"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        tools:ignore="HardcodedText,RtlHardcoded"
-        android:scaleType="centerCrop"/>
-    <TextView
-        android:text="Movie Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_movie_name"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:ellipsize="marquee"
-        android:freezesText="true"
-        android:singleLine="true"
-        android:focusableInTouchMode="true"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:focusable="true"
-        android:scrollHorizontally="true"
-        android:layout_toEndOf="@+id/Poster_Image"
-        android:textAlignment="viewStart"
-        tools:ignore="Deprecated,HardcodedText,RtlHardcoded"
-        android:textStyle="italic|bold"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        />
-    <TextView
-        android:text="Release Date"
-        android:textColor="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_release_date"
-        android:layout_marginLeft="10dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="60dp"
-        android:layout_toEndOf="@+id/Poster_Image"
-        android:textAlignment="viewStart"
-        tools:ignore="HardcodedText,RtlHardcoded"
-        android:textStyle="italic|bold"
-        android:textSize="16sp"/>
-    <TextView
-        android:text="Vote Avarage"
-        android:textColor="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_movie_vote"
-        tools:ignore="HardcodedText,RtlHardcoded"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="10dp"
-        android:layout_toEndOf="@+id/Poster_Image"
-        android:textAlignment="viewStart"
-        android:textStyle="italic|bold"
-        android:textSize="16sp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Poster_Image"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical"
-        android:isScrollContainer="true">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
-        <TextView
-            android:text="OverView :"
-            android:textSize="16dp"
-            android:textStyle="normal|bold"
-            android:textColor="@android:color/white"
+    <android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/content_movie_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:id="@+id/textView"
-            android:layout_below="@+id/Poster_Image"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            tools:ignore="HardcodedText,ObsoleteLayoutParam,RtlHardcoded,SpUsage" />
+            android:background="@color/colorPrimary"
+            tools:context="com.apps.elkafrawyel.movies.activity.movie_detailsFragment"
+            tools:showIn="@layout/a_details">
 
-        <TextView
-        android:text="Description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_overview"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        tools:ignore="Deprecated,HardcodedText,ObsoleteLayoutParam,RtlHardcoded"
-        android:textStyle="italic|bold"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/Poster_Image"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:ellipsize="marquee"
-        android:freezesText="true"
-        android:singleLine="true"
-        android:focusableInTouchMode="true"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:focusable="true"
-        android:scrollHorizontally="true"
-        android:textAlignment="viewStart"
-            />
+            <ImageView
+                android:id="@+id/Poster_Image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="Movie Poster"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/rio"
+                tools:ignore="HardcodedText,RtlHardcoded" />
 
-        <TextView
-        android:text="Trailers :"
-        android:textColor="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_overview"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginTop="18dp"
-        android:id="@+id/txtTralier"
-        android:textStyle="normal|bold"
-        android:textAlignment="textStart"
-        android:textSize="16sp"
-        tools:ignore="HardcodedText,ObsoleteLayoutParam" />
+            <TextView
+                android:id="@+id/txt_movie_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/Poster_Image"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:freezesText="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Movie Title"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="italic|bold"
+                tools:ignore="Deprecated,HardcodedText,RtlHardcoded" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/horizontal_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtTralier"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
-            tools:ignore="ObsoleteLayoutParam"
-            android:background="@color/colorPrimary">
-        </android.support.v7.widget.RecyclerView>
+            <TextView
+                android:id="@+id/txt_release_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="60dp"
+                android:layout_toEndOf="@+id/Poster_Image"
+                android:text="Release Date"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="italic|bold"
+                tools:ignore="HardcodedText,RtlHardcoded" />
 
-        <TextView
-        android:text="Reviews :"
-        android:textColor="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_below="@+id/horizontal_recycler_view"
-        android:layout_alignStart="@+id/ReviewsList"
-        android:layout_marginTop="10dp"
-        android:id="@+id/Reviewtxt"
-        android:textStyle="normal|bold"
-        android:textAlignment="textStart"
-        android:textSize="16dp"
-        tools:ignore="HardcodedText,ObsoleteLayoutParam,SpUsage" />
+            <TextView
+                android:id="@+id/txt_movie_vote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="100dp"
+                android:layout_toEndOf="@+id/Poster_Image"
+                android:text="Vote Avarage"
+                android:textAlignment="viewStart"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="italic|bold"
+                tools:ignore="HardcodedText,RtlHardcoded" />
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ReviewsList"
-        android:layout_marginTop="10dp"
-        android:layout_alignStart="@+id/Poster_Image"
-        android:layout_below="@+id/Reviewtxt"
-        tools:ignore="ObsoleteLayoutParam"
-        android:scrollbars="vertical"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/Poster_Image"
+                android:layout_marginTop="24dp"
+                android:isScrollContainer="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/Poster_Image"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="OverView :"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp"
+                    android:textStyle="normal|bold"
+                    tools:ignore="HardcodedText,ObsoleteLayoutParam,RtlHardcoded,SpUsage" />
+
+                <TextView
+                    android:id="@+id/txt_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/Poster_Image"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:freezesText="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="Description"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="italic|bold"
+                    tools:ignore="Deprecated,HardcodedText,ObsoleteLayoutParam,RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/txtTralier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/ReviewsList"
+                    android:layout_below="@+id/txt_overview"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="18dp"
+                    android:text="Trailers :"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold"
+                    tools:ignore="HardcodedText,ObsoleteLayoutParam" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/horizontal_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/txtTralier"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    tools:ignore="ObsoleteLayoutParam" />
+
+                <TextView
+                    android:id="@+id/tv_Review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignStart="@+id/ReviewsList"
+                    android:layout_below="@+id/horizontal_recycler_view"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Reviews :"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp"
+                    android:textStyle="normal|bold"
+                    tools:ignore="HardcodedText,ObsoleteLayoutParam,SpUsage" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/ReviewsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Poster_Image"
+                    android:layout_below="@+id/tv_Review"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    android:scrollbars="vertical"
+                    tools:ignore="ObsoleteLayoutParam" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
 </RelativeLayout>
-</android.support.v4.widget.NestedScrollView>
-
