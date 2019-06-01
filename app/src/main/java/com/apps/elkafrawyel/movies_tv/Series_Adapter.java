@@ -57,9 +57,11 @@ public class Series_Adapter extends RecyclerView.Adapter<Series_Adapter.SeriesVi
     }
 
     private void ShowOpenAd() {
-        if (OpenAd.isLoaded()) {
-            OpenAd.show();
-        }
+//        if (OpenAd.isLoaded()) {
+//            OpenAd.show();
+//        }
+
+        Toast.makeText(context, "Series Details Coming Soon.", Toast.LENGTH_SHORT).show();
     }
 
     @NonNull

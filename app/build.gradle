@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 
-
 android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.apps.elkafrawyel.movies_tv"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 9
-        versionName "3.4"
+        versionCode 19
+        versionName "4.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfigs {
             release {
